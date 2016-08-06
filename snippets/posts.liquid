@@ -1,0 +1,13 @@
+<section class="posts">
+  {% for post in posts %}
+    {% include 'post' %}
+  {% endfor %}
+</section>
+
+{% include 'pagination' %}
+
+{% if posts.pagination %}
+  <footer class="pagination">
+    {% default_pagination %}
+  </footer>
+{% endif %}
