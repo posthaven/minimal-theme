@@ -5,6 +5,10 @@
 
     <meta content='width=device-width,initial-scale=1' name='viewport'>
 
+    {% comment %}
+      This provides Posthaven built meta description, Facebook Open Graph and Twitter Card
+      <meta> tags.
+    {% endcomment %}
     {{ meta_tags }}
 
     <link href="{{ 'images/favicon.ico' | asset_url }}" rel='shortcut icon' type='image/x-icon'>
@@ -14,6 +18,7 @@
 
     {{ 'blog.css' | asset_url | stylesheet_tag }}
 
+    {% comment %} This Required for internal Posthaven functionality to work!.  {% endcomment %}
     {{ posthaven.includes_for_head }}
   </head>
 
@@ -68,6 +73,7 @@
       Built with <a href="https://posthaven.com/">Posthaven, blogging forever.</a>
     </footer>
 
+    {% comment %} This Required for internal Posthaven functionality to work!.  {% endcomment %}
     {{ posthaven.includes_for_body }}
   </body>
 </html>
