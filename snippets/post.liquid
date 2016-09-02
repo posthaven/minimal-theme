@@ -14,7 +14,7 @@
   <footer>
     <div class="details">
       {% unless post.url.current_page? %}
-        {% if posts.comment.count > 0 %}
+        {% if post.comment_count > 0 %}
           <a href="{{ post.url }}" class="{{ post.url | text_if_current }}">
             {{ post.comment_count | pluralize: 'comment' }}
           </a>
