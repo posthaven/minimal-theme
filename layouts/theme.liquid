@@ -18,6 +18,8 @@
 
     {{ 'blog.css' | asset_url | stylesheet_tag }}
 
+    {{ 'tufte.css' | asset_url | stylesheet_tag }}
+
     {% comment %} This Required for internal Posthaven functionality to work!.  {% endcomment %}
     {{ posthaven.includes_for_head }}
   </head>
