@@ -20,24 +20,9 @@
   </head>
 
   <body class='site-{{ site.id }}'>
-    <article>
-      <h1>
-        {{ site.name | smarty_pants }}
-      </h1>
-
-      {% unless site.description == empty %}
-        <h3>{{ site.description | smarty_pants }}</h3>
-      {% endunless %}
-
-      {% include 'bio' %}
-      {% include 'blogroll' %}
-      {% include 'tags' %}
-
-      <main>
+    <main>
         {{ content_for_layout }}
-      </main>
-
-    </article>
+    </main>
 
     <footer>
       {% include 'nav_menu' %}
