@@ -20,38 +20,34 @@
   </head>
 
   <body class='site-{{ site.id }}'>
-
-    <header>
-      {% include 'alerts' %}
-
+    <article>
       <h1>
-        <a href="{{ site.url }}">{{ site.name | smarty_pants }}</a>
+        {{ site.name | smarty_pants }}
       </h1>
 
       {% unless site.description == empty %}
         <h3>{{ site.description | smarty_pants }}</h3>
       {% endunless %}
 
-      {% include 'nav_menu' %}
-    </header>
-
-    <aside class="sidebar">
       {% include 'bio' %}
       {% include 'blogroll' %}
       {% include 'tags' %}
-    </aside>
 
-    <main>
-      {{ content_for_layout }}
-    </main>
+      <main>
+        {{ content_for_layout }}
+      </main>
+
+    </article>
 
     <footer>
-    {% form 'archive' %}
+      {% include 'nav_menu' %}
 
-    {% if site.subscription_enabled? %}
-          {% form 'subscribe' include_prompt:true %}
+      {% form 'archive' %}
 
-          <a href="{{ site.feed_url }}">Subscribe to the feed</a>
+      {% if site.subscription_enabled? %}
+            {% form 'subscribe' include_prompt:true %}
+
+            <a href="{{ site.feed_url }}">Subscribe to the feed</a>
       {% endif %}
     </footer>
 
