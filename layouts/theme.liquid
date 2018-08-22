@@ -20,9 +20,15 @@
   </head>
 
   <body class='site-{{ site.id }}'>
-    <main>
-        {{ content_for_layout }}
-    </main>
+    <article>
+      <h1>
+        {{ site.name | smarty_pants }}
+      </h1>
+      
+      <main>
+          {{ content_for_layout }}
+      </main>
+    </article>
 
     <footer>
       {% include 'nav_menu' %}

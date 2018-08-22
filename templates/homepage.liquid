@@ -1,16 +1,9 @@
-<article>
-  <h1>
-    {{ site.name | smarty_pants }}
-  </h1>
+{% unless site.description == empty %}
+  <h3>{{ site.description | smarty_pants }}</h3>
+{% endunless %}
 
-  {% unless site.description == empty %}
-    <h3>{{ site.description | smarty_pants }}</h3>
-  {% endunless %}
-
-  {% include 'bio' %}
-  {% include 'blogroll' %}
-  {% include 'tags' %}  
-
-</article>
+{% include 'bio' %}
+{% include 'blogroll' %}
+{% include 'tags' %}  
 
 {% include 'posts' %}
