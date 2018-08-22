@@ -1,67 +1,65 @@
-<article class="post post-{{ post.id }}">
-  <header>
-    <span class="marginnote">
-        Posted
+<header>
+  <span class="marginnote">
+      Posted
+      <a href="{{ post.url }}" class="{{ post.url | text_if_current }}">
+        {{ post.published_at | relative_date }}
+      </a>.
+  </span>
+
+  {% if post.private? %}
+    <div class="private-indicator" title="This post is private">&#128274;</div>
+  {% endif %}
+
+  {% if post.url.current_page? %}
+    <h1>{{ post.title }}</h1>
+  {% else %}
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+  {% endif %}
+</header>
+
+<div class="body">
+  {% if post.url.current_page? %}
+    {{ post.body }}
+  {% else %}
+    {{ post.excerpt_or_body }}
+  {% endif %}
+</div>
+
+<footer>
+  <div class="details">
+    {% unless post.url.current_page? %}
+      {% if post.comment_count > 0 %}
         <a href="{{ post.url }}" class="{{ post.url | text_if_current }}">
-          {{ post.published_at | relative_date }}
-        </a>.
-    </span>
-    
-    {% if post.private? %}
-      <div class="private-indicator" title="This post is private">&#128274;</div>
-    {% endif %}
-
-    {% if post.url.current_page? %}
-      <h1>{{ post.title }}</h1>
-    {% else %}
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    {% endif %}
-  </header>
-
-  <div class="body">
-    {% if post.url.current_page? %}
-      {{ post.body }}
-    {% else %}
-      {{ post.excerpt_or_body }}
-    {% endif %}
-  </div>
-
-  <footer>
-    <div class="details">
-      {% unless post.url.current_page? %}
-        {% if post.comment_count > 0 %}
-          <a href="{{ post.url }}" class="{{ post.url | text_if_current }}">
-            {{ post.comment_count | pluralize: 'comment' }}
-          </a>
-          &bull;
-        {% endif %}
-      {% endunless %}
-
-      {% if post.show_byline? %}
-        <span class="author">
-          by
-          {% if post.author.url %}
-            <a href="{{ post.author.url }}">{{ post.author.name }}</a>
-          {% else %}
-            {{ post.author.name }}
-          {% endif %}
-        </span>
+          {{ post.comment_count | pluralize: 'comment' }}
+        </a>
+        &bull;
       {% endif %}
-    </div>
-    {% unless post.tags == empty %}
-      <div class="tags">
-        <ul>
-          <li>tags:</li>
-
-          {% for t in post.tags %}
-            <li class="{{ t.url | text_if_current}}">
-              <a href="{{ t.url }}">{{ t.name }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
     {% endunless %}
 
-    {{ post | share_buttons }}
-  </footer>
-</article>
+    {% if post.show_byline? %}
+      <span class="author">
+        by
+        {% if post.author.url %}
+          <a href="{{ post.author.url }}">{{ post.author.name }}</a>
+        {% else %}
+          {{ post.author.name }}
+        {% endif %}
+      </span>
+    {% endif %}
+  </div>
+  {% unless post.tags == empty %}
+    <div class="tags">
+      <ul>
+        <li>tags:</li>
+
+        {% for t in post.tags %}
+          <li class="{{ t.url | text_if_current}}">
+            <a href="{{ t.url }}">{{ t.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endunless %}
+
+  {{ post | share_buttons }}
+</footer>
