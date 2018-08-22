@@ -5,6 +5,13 @@
     {% endif %}
 
     <h1 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+
+    <span class="marginnote">
+        Posted
+        <a href="{{ post.url }}" class="{{ post.url | text_if_current }}">
+          {{ post.published_at | relative_date }}
+        </a>.
+    </span>
   </header>
 
   <div class="body">
@@ -25,10 +32,6 @@
           &bull;
         {% endif %}
       {% endunless %}
-      posted
-      <a href="{{ post.url }}" class="{{ post.url | text_if_current }}">
-        {{ post.published_at | relative_date }}
-      </a>
 
       {% if post.show_byline? %}
         <span class="author">
