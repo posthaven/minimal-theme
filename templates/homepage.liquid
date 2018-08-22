@@ -1,3 +1,7 @@
+<h1>
+  {{ site.name | smarty_pants }}
+</h1>
+
 {% unless site.description == empty %}
   <h3>{{ site.description | smarty_pants }}</h3>
 {% endunless %}
