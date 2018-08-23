@@ -2,8 +2,8 @@
   <span class="marginnote">
       Posted
       <a href="{{ post.url }}" class="{{ post.url | text_if_current }}">
-        {{ post.published_at | relative_date }}
-      </a>.
+        {{ post.published_at | relative_date }}.
+      </a>
   </span>
 
   {% if post.private? %}
