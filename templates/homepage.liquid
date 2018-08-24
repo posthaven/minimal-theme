@@ -3,7 +3,7 @@
 </h1>
 
 {% unless site.description == empty %}
-  <h3>{{ site.description | smarty_pants }}</h3>
+  <p>{{ site.description | smarty_pants }}</p>
 {% endunless %}
 
 {% include 'bio' %}
