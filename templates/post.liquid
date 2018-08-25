@@ -1,27 +1,47 @@
-{% include 'post' %}
+{% assign show_back_to_blog = true %}
 
-<footer class="post-responses">
-  {% if post.response_count > 0 %}
-    <div class="responses">
-      <h4>{{ post.response_count | pluralize: 'Response' }}</h4>
-      {% for response in post.responses %}
-        {% include 'response' %}
-      {% endfor %}
-      {% if post.anon_upvote_count > 0 %}
-        <div class="response">
-          <div class="upvote">
-            {{ post.anon_upvote_count | pluralize: 'visitor' }}
-            upvoted this post.
-          </div>
-        </div>
-      {% endif %}
-    </div>
-  {% endif %}
+<div id="main">
+  <article class="post">
+    {% include 'post' %}
+  </article>
 
-  {% if site.comments_enabled? %}
-    <div class="new-comment">
-      <h4>Comment</h4>
-      {% form 'comment' %}
+  <footer id="post_responses" class="post-responses">
+    {% include 'responses' %}
+    {% form 'comment' %}
+  </footer>
+</div>
+
+<aside id='sidebar'>
+  {% include 'nav_menu' %}
+  {% include 'bio' %}
+
+  <section class="post-date">
+    <div class="display-date">
+      Posted
+      <a href="{{ post.url }}">{{ post.published_at | relative_date }}</a>
+
+      <div class="actual-date">
+        {{ post.published_at | local_date: "%B %e, %Y at %l:%M %p" }}
+      </div>
     </div>
+  </section>
+
+  <section class="stats">
+    <div class="stat">
+      {{ post | view_count: 'view' }}
+    </div>
+  </section>
+
+  {% if post.tags.size > 0 %}
+    <section class="tag-list">
+      <h3>Tags</h3>
+      <ul>
+        {% for post_tag in post.tags %}
+          <li>
+            <a href="{{ post_tag.url }}">{{ post_tag.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
   {% endif %}
-</footer>
+</aside>

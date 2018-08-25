@@ -5,7 +5,8 @@
       {{ response.body }}
     </div>
     <div class="byline">
-      by {{ response.display_name }}
+      <span class="mdash">&mdash;</span>
+      {{ response.display_name }}
       <span class="time-ago">{{ response.created_at | relative_date }}</span>
     </div>
   </div>

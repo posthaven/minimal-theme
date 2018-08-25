@@ -1,11 +1,1 @@
-<h1>
-  {{ site.name | smarty_pants }}
-</h1>
-
-{% unless site.description == empty %}
-  <p>{{ site.description | smarty_pants }}</p>
-{% endunless %}
-
-{% include 'bio' %}
-
-{% include 'posts' %}
+{% include 'post_list' %}

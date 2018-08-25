@@ -1,21 +1,6 @@
-<p>{{ site.profile.bio }}</p>
+<section id='bio'>
+  <h3>{{ site.profile.name }}</h3>
+  {{ site.profile.bio }}
 
-<p>
-	<a href="http://www.twitter.com/ajaykarpur" target="_blank">
-		<i class="fa fa-twitter"></i>
-	</a>
-	<a href="https://www.linkedin.com/in/ajaykarpur" target="_blank">
-		<i class="fa fa-linkedin"></i>
-	</a>
-	<a href="http://www.github.com/ajaykarpur" target="_blank">
-		<i class="fa fa-github"></i>
-	</a>
-</p>
-
-{% if site.profile.photo %}
-<figure>
-  <img src="{{ site.profile.photo.medium.url }}"
-      width="{{ site.profile.photo.medium.width }}"
-      height="{{ site.profile.photo.medium.height }}">
-</figure>
-{% endif %}
+  {% include 'profile_pic' %}
+</section>
