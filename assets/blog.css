@@ -894,10 +894,10 @@ blockquote.posterous_long_quote {
   position: absolute;
   top: 0px;
   width: 215px;
+  font-size: 1.1rem;
   font-weight: 400;
   margin-left: 40px; }
   #sidebar section {
-    font-size: 1.1rem;
     margin-top: 30px;
     margin-bottom: 50px; }
     #sidebar section h3 {

@@ -1,8 +1,6 @@
-<section id='bio'>
-  <h3>
-  	<a href="{{ site.url }}">{{ site.name | smarty_pants }}</a>
-  </h3>
-  {{ site.profile.bio }}
+<h3>
+	<a href="{{ site.url }}">{{ site.name | smarty_pants }}</a>
+</h3>
+{{ site.profile.bio }}
 
-  {% include 'profile_pic' %}
-</section>
+{% include 'profile_pic' %}
