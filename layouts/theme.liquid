@@ -27,14 +27,14 @@
   </head>
 
   <body id='site_{{ site.id }}'>
+
+    {% assign show_back_to_blog = false %}
+
     <div id='container'>
-
-      {% assign hide_header = true %}
-
       {% unless hide_header %}
         <header id='header'>
           <h1>
-            <a href="{{ site.url }}">{{ site.name | smarty_pants }}</a>
+            {{ post.title }}
           </h1>
 
           {% if site.description %}
