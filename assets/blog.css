@@ -667,7 +667,7 @@ table {
 body {
   line-height: 1.6;
   background-color: #fffff4;
-  color: #000;
+  color: #000000;
   margin: 0 0;
   font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-weight: 400;
@@ -894,10 +894,10 @@ blockquote.posterous_long_quote {
   position: absolute;
   top: 0px;
   width: 215px;
-  font-weight: 300;
+  font-weight: 400;
   margin-left: 40px; }
   #sidebar section {
-    font-size: 14px;
+    font-size: 1.1rem;
     margin-top: 30px;
     margin-bottom: 50px; }
     #sidebar section h3 {
@@ -906,7 +906,7 @@ blockquote.posterous_long_quote {
       font-weight: normal;
       color: #424242; }
     #sidebar section p, #sidebar section ul li {
-      font-size: 14px; }
+      font-size: 1.1rem; }
     #sidebar section ul {
       padding-left: 0px;
       margin: 10px 0px; }
@@ -937,8 +937,7 @@ blockquote.posterous_long_quote {
   #sidebar section:first-child nav:first-child ul {
     margin-top: 0 !important; }
   #sidebar #bio {
-    font-size: 14px;
-    color: #444; }
+    font-size: 1.1rem; }
     #sidebar #bio .profile-pic {
       margin-top: 15px; }
       #sidebar #bio .profile-pic img {
@@ -981,11 +980,11 @@ blockquote.posterous_long_quote {
 #sidebar section.subscribe .posthaven-subscribe-prompt strong {
   display: block; }
 #sidebar section.subscribe .posthaven-subscribe-prompt span {
-  color: #000; }
+  color: #000000; }
 
 .post-responses .subscribe {
   margin-top: 8px;
-  font-size: 14px; }
+  font-size: -0.6rem; }
   .post-responses .subscribe .posthaven-subscribe-form {
     display: inline-block; }
   .post-responses .subscribe a {
@@ -1015,8 +1014,8 @@ blockquote.posterous_long_quote {
   max-width: 800px; }
 
 .post {
-  font-size: 16px;
-  color: #000;
+  font-size: 1.4rem;
+  color: #000000;
   margin-top: 40px;
   margin-bottom: 80px;
   /* responsive resize */
@@ -1040,12 +1039,12 @@ blockquote.posterous_long_quote {
   .post iframe {
     max-width: inherit\9; }
   .post blockquote p {
-    font-size: 16px; }
+    font-size: 1.4rem; }
   .post blockquote {
     margin-left: 0px;
     padding-left: 10px;
     border-left: 4px solid #eee;
-    font-size: 16px;
+    font-size: 1.4rem;
     color: #666; }
   .post pre {
     font-size: 13px; }
