@@ -45,17 +45,13 @@ audio:not([controls]) {
    Base
    ========================================================================== */
 /**
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom.
+ * Prevent iOS text size adjust after orientation change, without disabling
+ * user zoom.
  */
 html {
-  font-family: sans-serif;
-  /* 1 */
+  font-size: 15px;
   -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */ }
+  -webkit-text-size-adjust: 100%; }
 
 /**
  * Remove default margin.
@@ -82,6 +78,34 @@ a:hover {
 /* ==========================================================================
    Typography
    ========================================================================== */
+
+/**
+ * Include the ET Book typefaces.
+ */
+@font-face { font-family: "et-book";
+             src: url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot");
+             src: url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.ttf") format("truetype"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.svg#etbookromanosf") format("svg");
+             font-weight: normal;
+             font-style: normal; }
+
+@font-face { font-family: "et-book";
+             src: url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot");
+             src: url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff") format("woff"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.ttf") format("truetype"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.svg#etbookromanosf") format("svg");
+             font-weight: normal;
+             font-style: italic; }
+
+@font-face { font-family: "et-book";
+             src: url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot");
+             src: url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff") format("woff"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.ttf") format("truetype"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.svg#etbookromanosf") format("svg");
+             font-weight: bold;
+             font-style: normal; }
+
+@font-face { font-family: "et-book-roman-old-style";
+             src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot");
+             src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.ttf") format("truetype"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.svg#etbookromanosf") format("svg");
+             font-weight: normal;
+             font-style: normal; }
+
 /**
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari 5, and Chrome.
@@ -639,33 +663,56 @@ table {
 *********************************************************/
 body {
   line-height: 1.6;
-  color: #555;
   margin: 0 0;
-  font-family: "Oxygen", sans-serif;
-  font-weight: 400;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  background-color: #fffff4;
+  color: #000000; }
 
 a {
-  color: #2b6cc2;
+  color: #CB3B33;
   text-decoration: none; }
 
 a:hover {
   text-decoration: underline; }
 
 a.visited {
-  color: #285188; }
+  color: #BB261A; }
 
 .right {
   float: right; }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Crimson Text", Georgia, serif;
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.015em; }
+h1 { font-weight: 400;
+     margin-top: 4rem;
+     margin-bottom: 1.5rem;
+     font-size: 3.2rem;
+     font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+     letter-spacing: .03em;
+     line-height: 1; }
 
-h1 {
-  font-size: 50px; }
+h2 { font-weight: 400;
+     margin-top: 2.1rem;
+     margin-bottom: 1.4rem;
+     font-size: 2.2rem;
+     font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+     letter-spacing: .03em;
+     line-height: 1; }
+
+h3 { font-weight: 400;
+     font-size: 1.7rem;
+     font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+     letter-spacing: .03em;
+     margin-top: 2rem;
+     margin-bottom: 1.4rem;
+     line-height: 1; }
+
+hr { display: block;
+     height: 1px;
+     width: 55%;
+     border: 0;
+     border-top: 1px solid #ccc;
+     margin: 1em 0;
+     padding: 0; }
 
 textarea, input[type=text] {
   font-size: 16px;
@@ -677,7 +724,7 @@ input[type='submit'] {
   background: #2b6cc2;
   border: 1px solid #1e728c;
   border-radius: 3px;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   -moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.5);
   -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.5);
   box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.5);
@@ -771,7 +818,7 @@ blockquote.posterous_long_quote {
   position: absolute;
   top: 5px;
   right: 0px;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-size: 11px;
   text-align: right;
   padding-right: 7px; }
@@ -820,7 +867,7 @@ blockquote.posterous_long_quote {
     height: 32px; }
   #topbar .account {
     float: left;
-    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
     font-size: 14px;
     line-height: 31px; }
     #topbar .account a {
@@ -848,7 +895,7 @@ blockquote.posterous_long_quote {
       #header .subhead h3 strong {
         font-size: 12px;
         display: block;
-        font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
         text-transform: uppercase;
         color: #999; }
     #header .subhead .back-to-blog {
@@ -1093,8 +1140,7 @@ blockquote.posterous_long_quote {
 *********************************************************/
 .pagination {
   margin: 100px 0px;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
-  .pagination ul {
+  font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
     margin: 0 0 40px 0;
     padding: 0 0; }
   .pagination ul li {
@@ -1156,11 +1202,11 @@ blockquote.posterous_long_quote {
     .post-responses .responses .response .byline {
       color: #999; }
       .post-responses .responses .response .byline .mdash {
-        font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
         font-weight: 100; }
       .post-responses .responses .response .byline .time-ago {
         margin-left: 10px;
-        font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
         font-size: 11px;
         color: #ccc;
         display: none; }
@@ -1200,7 +1246,7 @@ blockquote.posterous_long_quote {
   margin: 40px -10px; }
   .posthaven-comment-form .posthaven-comment-add-url {
     font-size: 12px;
-    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+    font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; }
   .posthaven-comment-form .posthaven-field {
     margin: 10px 0px; }
     .posthaven-comment-form .posthaven-field label {
@@ -1296,7 +1342,7 @@ li.archive-entry {
     background-color: #eee;
     font-style: normal; }
   li.archive-entry .archive-date {
-    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
     font-size: 11px;
     color: #999;
     font-weight: bold;
