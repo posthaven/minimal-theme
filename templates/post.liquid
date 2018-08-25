@@ -21,7 +21,7 @@
       <a href="{{ post.url }}">{{ post.published_at | relative_date }}</a>
 
       <div class="actual-date">
-        {{ post.published_at | local_date: "%B %e, %Y at %l:%M %p" }}
+        {{ post.published_at | local_date: "%B %e, %Y" }}
       </div>
     </div>
   </section>
