@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html class='no-js'>
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63851501-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-63851501-2');
+    </script>
+
     <title>{{ request.page_title }}</title>
 
     <meta content='width=device-width,initial-scale=1' name='viewport'>
 
+    <meta name="google-site-verification" content="-Vo1uOIjzn9ZIGPtzTo1kEJN8DLse4pnj_xhWnNXGew" />
+
     {{ meta_tags }}
 
     <link href="{{ 'images/favicon.ico' | asset_url }}" rel='shortcut icon' type='image/x-icon'>
-    <link href="//fonts.googleapis.com/css?family=Oxygen:400,700,300|Crimson+Text:400,400italic&amp;subset=latin,latin-ext"
-          media="screen" rel="stylesheet" type="text/css" />
+
     {{ 'blog.css' | asset_url | stylesheet_tag }}
 
     {{ posthaven.includes_for_head }}
