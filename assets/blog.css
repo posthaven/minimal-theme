@@ -49,7 +49,6 @@ audio:not([controls]) {
  * user zoom.
  */
 html {
-  font-size: 15px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; }
 
