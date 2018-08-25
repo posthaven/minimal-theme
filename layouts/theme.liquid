@@ -1,79 +1,69 @@
 <!DOCTYPE html>
 <html class='no-js'>
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63851501-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-63851501-2');
+    </script>
+
     <title>{{ request.page_title }}</title>
 
     <meta content='width=device-width,initial-scale=1' name='viewport'>
 
-    {% comment %}
-      This provides Posthaven built meta description, Facebook Open Graph and Twitter Card
-      <meta> tags.
-    {% endcomment %}
+    <meta name="google-site-verification" content="-Vo1uOIjzn9ZIGPtzTo1kEJN8DLse4pnj_xhWnNXGew" />
+
     {{ meta_tags }}
 
     <link href="{{ 'images/favicon.ico' | asset_url }}" rel='shortcut icon' type='image/x-icon'>
-    <!--[if IE]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
     {{ 'blog.css' | asset_url | stylesheet_tag }}
 
-    {% comment %} This Required for internal Posthaven functionality to work!.  {% endcomment %}
+    {{ 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' | stylesheet_tag }}
+
     {{ posthaven.includes_for_head }}
   </head>
 
-  <body class='site-{{ site.id }}'>
-    {{ posthaven.user_menu }}
+  <body id='site_{{ site.id }}'>
 
-    <header>
-      {% include 'alerts' %}
+    {% assign show_back_to_blog = false %}
 
-      <h1>
-        <a href="{{ site.url }}">{{ site.name | smarty_pants }}</a>
-      </h1>
+    <div id='container'>
+      {% unless hide_header %}
+        <header id='header'>
+          <h1>
+            {{ post.title }}
+          </h1>
 
-      {% unless site.description == empty %}
-        <h3>{{ site.description | smarty_pants }}</h3>
+          {% if site.description %}
+            <h2>{{ site.description | smarty_pants }}</h2>
+          {% endif %}
+
+          {% if subhead_content %}
+            <section class="subhead">
+              {{ subhead_content }}
+
+              <div class="back-to-blog">
+                <a href="{{ site.url }}">&laquo;&nbsp;Back to blog</a>
+              </div>
+            </section>
+          {% elsif show_back_to_blog %}
+            <div class="back-to-blog">
+              <a href="{{ site.url }}">&laquo;&nbsp;Back to blog</a>
+            </div>
+          {% endif %}
+        </header>
       {% endunless %}
 
-      {% include 'nav_menu' %}
-    </header>
+      <div id='main_container'>
+        {{ content_for_layout }}
+      </div>
+    </div>
 
-
-    <main>
-      {{ content_for_layout }}
-    </main>
-
-    <aside class="sidebar">
-      {% include 'bio' %}
-
-      <section class="archive">
-        <h1>Archive</h1>
-        {% form 'archive' %}
-        <a href="{{ site.archive_url }}">Browse the archive</a>
-      </section>
-
-      {% include 'contributors' %}
-
-      {% if site.subscription_enabled? %}
-        <section class="subscribe">
-          <h1>Subscribe</h1>
-
-          {% form 'subscribe' include_prompt:true %}
-
-          <a href="{{ site.feed_url }}">Subscribe to the feed</a>
-        </section>
-      {% endif %}
-
-      {% include 'blogroll' %}
-      {% include 'tags' %}
-    </aside>
-
-    <footer>
-      Built with <a href="https://posthaven.com/">Posthaven, blogging forever.</a>
-    </footer>
-
-    {% comment %} This Required for internal Posthaven functionality to work!.  {% endcomment %}
     {{ posthaven.includes_for_body }}
   </body>
 </html>

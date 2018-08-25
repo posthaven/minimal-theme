@@ -1,9 +1,12 @@
-<article class="page page-{{ page.id }}">
-  <header>
-    <h1 class="title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
-  </header>
+{% assign show_back_to_blog = true %}
 
-  <section class="body">
-    {{ page.body }}
-  </section>
-</article>
+<div id="main">
+  <article class="post">
+    {% include 'page' %}
+  </article>
+</div>
+
+<aside id='sidebar'>
+  {% include 'nav_menu' %}
+  {% include 'bio' %}
+</aside>

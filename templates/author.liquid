@@ -1,6 +1,8 @@
-<h2>
-  Posts by Author:
-  <strong>{{ author.name }}</strong>
-</h2>
+{% capture subhead_content %}
+  <h3>
+    <strong>Posts by Author</strong>
+    {{ author.name }}
+  </h3>
+{% endcapture %}
 
-{% include 'posts' %}
+{% include 'post_list' %}
