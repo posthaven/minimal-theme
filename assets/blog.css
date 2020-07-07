@@ -328,6 +328,8 @@ body > footer {
     padding-left: 0; } }
 article.post, article.page {
   max-width: 100%; }
+  article.post figure, article.page figure {
+    margin-bottom: 1em; }
   article.post header, article.page header {
     position: relative; }
     article.post header .private-indicator, article.page header .private-indicator {
